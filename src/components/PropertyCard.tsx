@@ -99,46 +99,46 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
 
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200 group flex flex-col h-full">
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-56 overflow-hidden ">
         <img
           src={firstImage}
           alt={property.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-2">
           <div className="flex justify-between w-full">
             <div className="flex space-x-2">
-              <button
+              {/* <button
                 onClick={handleCallClick}
                 className="p-2 bg-white/90 hover:bg-white text-blue-600 rounded-full transition-all duration-200 hover:scale-110 shadow-sm"
                 title="Appeler"
               >
                 <Phone className="h-4 w-4" />
-              </button>
-              <button
+              </button> */}
+              {/* <button
                 onClick={handleWhatsAppClick}
                 className="p-2 bg-white/90 hover:bg-white text-green-600 rounded-full transition-all duration-200 hover:scale-110 shadow-sm"
                 title="WhatsApp"
               >
                 <MessageCircle className="h-4 w-4" />
-              </button>
+              </button> */}
             </div>
 
-            <Link
+            {/* <Link
               to={`/property/${property.id}`}
               className="p-2 bg-white/90 hover:bg-white text-gray-800 rounded-full transition-all duration-200 hover:scale-110 shadow-sm"
               title="Voir les détails"
             >
-              <Eye className="h-4 w-4" />
-            </Link>
+              {/* <Eye className="h-4 w-4" /> */}
+            {/* </Link> */} 
           </div>
         </div>
 
-        <div className="absolute top-4 left-4 right-4 flex justify-between items-start space-x-2">
+        <div className="absolute top-4 right-4 flex justify-between items-start space-x-2">
           <div className="flex flex-col space-y-2">
-            <span className="bg-amber-600/95 text-white text-center px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm">
+            {/* <span className="bg-amber-600/95 text-white text-center px-3 py-1.5 rounded-full text-xs font-semibold shadow-sm">
               {getTypeLabel(property.type)}
-            </span>
+            </span> */}
             <span
               className={`px-3 py-1.5 rounded-full text-xs text-center font-semibold shadow-sm ${
                 property.statut === "à louer"
@@ -150,7 +150,7 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
             </span>
           </div>
 
-          <button
+          {/* <button
             onClick={handleFavoriteClick}
             className={`p-2 rounded-full transition-all duration-200 hover:scale-110 ${
               isFavorite(property.id)
@@ -163,7 +163,7 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
                 isFavorite(property.id) ? "fill-current" : ""
               }`}
             />
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -173,9 +173,7 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
             {property.title}
           </h3>
           <div className="text-right pl-2">
-            <div className="text-xl font-bold text-amber-600/95 whitespace-nowrap">
-              {formatPrice(property.price)}
-            </div>
+            
           </div>
         </div>
 
@@ -187,15 +185,15 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
         </div>
 
         <div className="flex flex-wrap gap-3 mb-4">
-          <div className="flex items-center text-gray-500 text-sm">
-            <Home className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
+          <div className="flex items-center text-black font-bold text-sm">
+            <Home className="h-3.5 w-3.5 mr-1.5 text-black font-bold" />
             {property.rooms} pièces
           </div>
-          <div className="flex items-center text-gray-500 text-sm">
+          <div className="flex items-center text-black font-bold text-sm">
             <Bath className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
             {property.bathrooms} SDB
           </div>
-          <div className="flex items-center text-gray-500 text-sm">
+          <div className="flex items-center text-black font-bold text-sm">
             <Square className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
             {property.surface}m²
           </div>
@@ -215,20 +213,25 @@ Merci pour votre retour !`.replace(/\n/g, "%0a"); // Conversion des sauts de lig
             </span>
           ))}
           {property.features.length > 3 && (
-            <span className="px-2.5 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-200">
+            <span className="px-2.5 py-1 bg-gray-50  text-xs rounded-full border border-gray-200">
               +{property.features.length - 3}
             </span>
           )}
         </div>
-
+<div className="flex flex-wrap md:flex-nowrap gap-2 space-x-6"> 
+   <div className="text-xl font-bold text-blue-500  ">
+              {formatPrice(property.price)}
+            </div>
         <div className="mt-auto">
           <Link
             to={`/property/${property.id}`}
-            className="w-full inline-flex items-center justify-center bg-white border border-amber-600/95 text-gray-600 hover:bg-amber-600/95 hover:text-white py-2.5 px-4 rounded-lg font-medium transition-colors duration-200 text-sm"
+            className="w-full  bg-white hover:bg-blue-500 border border-blue-500 text-blue-500  hover:text-white py-1 px-3 rounded-lg font-medium transition-colors duration-200 text-sm "
           >
             Voir les détails
-            <ArrowRight className="h-3.5 w-3.5 ml-2 group-hover:translate-x-1 transition-transform" />
+            {/* <ArrowRight className="h-3.5 w-3.5 ml-2 group-hover:translate-x-1 transition-transform" /> */}
           </Link>
+        </div>
+      
         </div>
       </div>
     </div>

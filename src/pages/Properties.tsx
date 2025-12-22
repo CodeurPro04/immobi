@@ -161,13 +161,15 @@ export default function Properties() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 py-8  ">
+        <div>
         {/* Filtres */}
         <PropertyFilters
           filters={filters}
           onFiltersChange={handleFiltersChange}
         />
-
+</div>
+<div>
         {/* Loading et erreur */}
         {loading && (
           <p className="text-center py-12">Chargement des biens en cours...</p>
@@ -238,7 +240,9 @@ export default function Properties() {
               </motion.div>
             )}
           </>
+          
         )}
+      </div>
       </div>
     </div>
   );
