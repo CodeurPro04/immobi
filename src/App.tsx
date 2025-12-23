@@ -8,6 +8,7 @@ import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
 import Favorites from './pages/Favorites';
 import Contact from './pages/Contact';
+import GoogleMap from './components/GoogleMap';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/property/:id" element={<PropertyDetail />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path='/GoogleMap' element={<GoogleMap/>}/>
           </Routes>
         </div>
         <Footer />
